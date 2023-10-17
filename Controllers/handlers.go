@@ -9,6 +9,7 @@ import (
 	"strconv"
 )
 
+// implementation of createItem function
 func CreateItem(w http.ResponseWriter, r *http.Request) {
 	var item model.Item
 	if err := json.NewDecoder(r.Body).Decode(&item); err != nil {
@@ -34,6 +35,8 @@ func CreateItem(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonResponse)
 
 }
+
+// implementaion of GetyAllItems function
 func GetAllItems(w http.ResponseWriter, r *http.Request) {
 	item, err := database.GetAllItems()
 	if err != nil {
