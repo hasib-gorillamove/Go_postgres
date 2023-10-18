@@ -86,7 +86,7 @@ func UpdateItem(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 	}
 	w.Header().Set("Content-Type", "application/json")
-	//json.NewEncoder(w).Encode(item)
+	json.NewEncoder(w).Encode(item)
 	w.Write(jsonResponse)
 	w.WriteHeader(http.StatusNoContent)
 }
