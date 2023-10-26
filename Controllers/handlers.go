@@ -53,6 +53,7 @@ func GetAllItems(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonResponse)
 }
 
+// implementation of GetGetelementbyID function
 func GetItem(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
